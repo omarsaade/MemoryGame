@@ -1,6 +1,7 @@
 document.querySelector(".control-buttons span").onclick = function () {
 
 
+
     //Prompt window To Ask For name
     let yourName = prompt("whats Your Name?");
 
@@ -14,7 +15,7 @@ document.querySelector(".control-buttons span").onclick = function () {
 
 
 
-
+        document.getElementById('start').play();
         //set Name TO Your Name
         document.querySelector(".name span").innerHTML = yourName;
 
@@ -176,6 +177,27 @@ function shuffle(array) {
     }
     return array;
 }
+
+
+// let timer = document.querySelector(".timer");
+// console.log(parseInt(document.querySelector(".timer").textContent));
+
+
+
+
+
+
+var timer = document.querySelector(".timer").textContent;
+
+
+
+
+
+
+
+
+
+
 
 
 
