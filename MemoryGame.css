@@ -106,3 +106,20 @@
     transform: rotateY(180deg);
     pointer-events: none;
   }
+
+  .ti {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  
+   
+    pointer-events: none;
+  }
+
+  #divo {
+    background-color: whitesmoke;
+    width: 300px;
+    height: 100px;
+  }

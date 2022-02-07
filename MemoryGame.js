@@ -1,9 +1,25 @@
+const items = { ...localStorage };
+
+let ls = document.getElementById("divo");
+// localStorage.getItem("omar");
+
+ls.textContent = items;
+
+
+var links = Object.keys(items).map(function (key) {
+    return key + ":" + items[key];
+});
+ls.textContent = "Score :" + links;
+
+
+
+
 document.querySelector(".control-buttons span").onclick = function () {
 
 
 
     //Prompt window To Ask For name
-    let yourName = prompt("whats Your Name?");
+    var yourName = prompt("whats Your Name?");
 
 
 
@@ -11,6 +27,8 @@ document.querySelector(".control-buttons span").onclick = function () {
     if (yourName == null || yourName == "") {
         //set Name To unknown
         document.querySelector(".name span").innerHTML = 'Unknown'
+        document.onload = start();
+
     } else {
 
 
@@ -18,12 +36,21 @@ document.querySelector(".control-buttons span").onclick = function () {
         document.getElementById('start').play();
         //set Name TO Your Name
         document.querySelector(".name span").innerHTML = yourName;
+        document.onload = start();
+
 
     }
     //Remove Splash Screen
     //NEW:   He TARi2A BTSHILLLL EL DIVVV KELLAAA   
     document.querySelector(".control-buttons").remove();
 };
+
+
+
+// localStorage.getItem(document.querySelector(".name span").innerHTML)
+// document.getElementById("divo").textContent = ` ${document.querySelector(".name span").innerHTML} ${z} `;
+
+
 
 let duration = 1000;
 //duration ms (card reverse)
@@ -131,6 +158,15 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
 
     } else {
         tiresElement.innerHTML = parseInt(tiresElement.innerHTML) + 1;
+
+        localStorage.setItem(document.querySelector(".name span").innerHTML, tiresElement.innerHTML);
+        // var cat = localStorage.getItem(tiresElement.innerHTML);
+        // var z = localStorage.getItem(document.querySelector(".name span").innerHTML);
+        // console.log(`${ document.querySelector(".name span").innerHTML } ${ z } `);
+        // document.getElementById("divo").textContent = `${document.querySelector(".name span").innerHTML} ${z} `;
+
+
+
         setTimeout(() => {
 
 
@@ -187,7 +223,6 @@ function shuffle(array) {
 
 
 
-var timer = document.querySelector(".timer").textContent;
 
 
 
@@ -197,11 +232,44 @@ var timer = document.querySelector(".timer").textContent;
 
 
 
+var timer = document.getElementById("tim").textContent;
+var convertTimer = parseInt(timer);
+
+
+function start() {
+    // const myInterval = setInterval(start, 1000);
+
+    const myInterval = setInterval(() => {
+        convertTimer = convertTimer - 1;
+
+        document.getElementById("tim").textContent = "0:" + convertTimer;
+        if (convertTimer < 10) {
+            document.getElementById("tim").textContent = "0:0" + convertTimer;
+        }
+        if (convertTimer == 0) {
 
 
 
 
+            clearInterval(myInterval);
+            alert("Time Is Over")
+            // document.querySelector("#tim").textContent = "Time Is Over";
+            document.body.classList.add("ti");
 
+
+
+
+        }
+    }, 1000);
+}
+
+
+
+// for (var i = 0; i < localStorage.length; i++) {
+//     // console.log(localStorage.getItem(localStorage.value(i)));
+//     console.log(localStorage.getItem(localStorage.key(i)));
+
+// }
 
 
 
