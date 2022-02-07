@@ -5,7 +5,6 @@ let ls = document.getElementById("divo");
 
 ls.textContent = items;
 
-
 var links = Object.keys(items).map(function (key) {
     return key + ":" + items[key];
 });
@@ -46,9 +45,6 @@ document.querySelector(".control-buttons span").onclick = function () {
 };
 
 
-
-// localStorage.getItem(document.querySelector(".name span").innerHTML)
-// document.getElementById("divo").textContent = ` ${document.querySelector(".name span").innerHTML} ${z} `;
 
 
 
@@ -159,7 +155,7 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
     } else {
         tiresElement.innerHTML = parseInt(tiresElement.innerHTML) + 1;
 
-        localStorage.setItem(document.querySelector(".name span").innerHTML, tiresElement.innerHTML);
+        // localStorage.setItem(document.querySelector(".name span").innerHTML, tiresElement.innerHTML);
         // var cat = localStorage.getItem(tiresElement.innerHTML);
         // var z = localStorage.getItem(document.querySelector(".name span").innerHTML);
         // console.log(`${ document.querySelector(".name span").innerHTML } ${ z } `);
